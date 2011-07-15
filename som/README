@@ -1,0 +1,42 @@
+
+  cs120a CAD/CAM
+  Final project: Polygon triangulation demo
+  Written by Mikhail Kruk
+  Professor Hod Lipson
+  Brandeis University, Fall 2000
+
+This program demonstrated the nlogn polygon triangulation algorithm 
+outlined in the book "Computational Geometry" by Mark De Berg.
+Algorithm consists of two phases: first polygon is split into monotone 
+polygons, then each monotone polygon is triangulated in linear time.
+
+The program takes polygon from user as a set of ordered points. Points are 
+interactively specified using the mouse. Then it demonstrated steps of the
+algorithm needed to split polygon. 
+
+Usage:
+after program starts you can quite by pressing ESC or start specifying polygon
+using mouse. Left mouse click creates new vertex, middle button closes the 
+polygon by joining the first entered vertex with the last one. 
+After that vertex types (in terms of triangulation algorithm)  are analyzed 
+and displayed using the notation of the book:
+rectangle outline -- start vertex
+filled rectangle -- end vertex
+diamond -- regular vertex
+upward facing triangle -- split vertex
+downward facing triangle -- merge vertex
+
+After that user can press space bar key to see the next step of the 
+triangulation process. Each steps demonstrates current position of the
+sweep line and highlights vertex which is intersected by the current position
+of the sweep line. When appropriate diagonals splitting polygon into monotone
+pieces is displayed.
+When all vertices are swept sweep line disappears and triangulation of 
+monotone pieces begins. Again each next step happens after user presses space 
+bar. The polygon which is currently being split into triangles is highlighted 
+as well as current vertex. Again when appropriate diagonals are inserted and
+appear on the screen.
+
+Source code, screen shots and statically linked Linux executable are 
+available at http://www.cs.brandeis.edu/~meshko/cadcam/
+(executable is called "som")
